@@ -12,7 +12,11 @@
     
 - **DNS:** `8.8.8.8` / `8.8.4.4`
 
-- **Senha Padrão:** `serverlab`
+- **Acesso ao Proxmox:** `<SOLICITAR_AO_PROFESSOR>`
+
+- **Login Admin WordPress (Modelo):** `admin2`
+
+- **Senha Admin WordPress (Modelo):** `lab123`
     
 
 ## 2. Inventário de IPs (Planejamento)
