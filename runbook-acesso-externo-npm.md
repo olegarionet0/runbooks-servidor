@@ -25,7 +25,7 @@ Execute estes comandos, um por vez:
 
 Bash
 
-```
+```bash
 # Atualizar a lista de pacotes do sistema
 apt update && apt upgrade -y
 
@@ -42,7 +42,7 @@ Com o Docker instalado, vamos criar uma pasta organizada para o Nginx Proxy Mana
 
 Bash
 
-```
+```bash
 # Criar uma pasta chamada npm e entrar nela
 mkdir /opt/npm
 cd /opt/npm
@@ -55,7 +55,7 @@ Cole o código exato abaixo dentro do arquivo. Ele diz ao Docker para baixar a i
 
 YAML
 
-```
+```yaml
 version: '3.8'
 services:
   app:
@@ -78,7 +78,7 @@ Ainda dentro da pasta `/opt/npm`, digite o comando para iniciar o servidor em se
 
 Bash
 
-```
+```bash
 docker compose up -d
 ```
 
@@ -97,4 +97,4 @@ O painel de login prateado do Nginx Proxy Manager vai aparecer. Os dados de fáb
 
 Logo ao entrar, o sistema pedirá para você alterar esse e-mail genérico para o seu próprio e cadastrar uma nova senha forte.
 
-Pronto! A Torre de Controle está no ar e no IP perfeito. O próximo passo será configurar a nuvem (Cloudflare/DuckDNS) para mandar o tráfego diretamente para as portas 80 e 443 desse IP `.202`!
+Pronto! A Torre de Controle está no ar e no IP perfeito. O próximo passo será configurar o Cloudflare Tunnel para publicar os sites na internet!

@@ -1,7 +1,5 @@
 ### 📘 Runbook: Provisionamento de Servidores Web (WordPress)
 
-Abaixo está o conteúdo formatado para você copiar e colar em uma nova nota no Obsidian.
-
 # Runbook: Infraestrutura de Squads - WordPress LXC
 
 ## 1. Contexto da Infraestrutura
@@ -14,25 +12,27 @@ Abaixo está o conteúdo formatado para você copiar e colar em uma nova nota no
     
 - **DNS:** `8.8.8.8` / `8.8.4.4`
 
-- Senha: serverlab
+- **Senha Padrão:** `serverlab`
     
 
 ## 2. Inventário de IPs (Planejamento)
 
-| **Unidade**    | **Nome Proxmox** | **Endereço IP** |
-| -------------- | ---------------- | --------------- |
-| Servidor Host  | `pve-lab`        | `20.20.0.200`   |
-| Servidor Host2 | `pve`            | `20.20.0.201`   |
-| Squad 1        | `WP-Squad1`      | `20.20.0.210`   |
-| Squad 2        | `WP-Squad2`      | `20.20.0.215`   |
-| Squad 3        | `WP-Squad3`      | `20.20.0.220`   |
-| Squad 4        | `WP-Squad4`      | `20.20.0.225`   |
-| Squad 5        | `WP-Squad5`      | `20.20.0.230`   |
-| Squad 6        | `WP-Squad6`      | `20.20.0.235`   |
-| Squad 7        | `WP-Squad7`      | `20.20.0.240`   |
-- login adm wordpress: https://20.20.0.210/wp-login.php
-- senha: 
-  ```
+| **Unidade**    | **Nome Proxmox** | **Endereço IP** | **Link do Site** | **Painel Admin (wp-admin)** |
+| -------------- | ---------------- | --------------- | ----------------- | --------------------------- |
+| Servidor Host  | `pve-lab`        | `20.20.0.200`   | `https://20.20.0.200:8006/` | - |
+| Servidor Host2 | `pve`            | `20.20.0.201`   | `https://20.20.0.201:8006/` | - |
+| Proxy (NPM)    | `NPM-Proxy`      | `20.20.0.202`   | `http://20.20.0.202:81/`  | - |
+| Squad 1        | `WP-Squad1`      | `20.20.0.210`   | [Acessar Site](https://20.20.0.210/) | [Acessar Admin](https://20.20.0.210/wp-login.php) |
+| Squad 2        | `WP-Squad2`      | `20.20.0.211`   | [Acessar Site](https://20.20.0.211/) | [Acessar Admin](https://20.20.0.211/wp-login.php) |
+| Squad 3        | `WP-Squad3`      | `20.20.0.212`   | [Acessar Site](https://20.20.0.212/) | [Acessar Admin](https://20.20.0.212/wp-login.php) |
+| Squad 4        | `WP-Squad4`      | `20.20.0.213`   | [Acessar Site](https://20.20.0.213/) | [Acessar Admin](https://20.20.0.213/wp-login.php) |
+| Squad 5        | `WP-Squad5`      | `20.20.0.214`   | [Acessar Site](https://20.20.0.214/) | [Acessar Admin](https://20.20.0.214/wp-login.php) |
+| Squad 6        | `WP-Squad6`      | `20.20.0.215`   | [Acessar Site](https://20.20.0.215/) | [Acessar Admin](https://20.20.0.215/wp-login.php) |
+| Squad 7        | `WP-Squad7`      | `20.20.0.216`   | [Acessar Site](https://20.20.0.216/) | [Acessar Admin](https://20.20.0.216/wp-login.php) |
+| Squad 8        | `WP-Squad8`      | `20.20.0.217`   | [Acessar Site](https://20.20.0.217/) | [Acessar Admin](https://20.20.0.217/wp-login.php) |
+| Squad 9        | `WP-Squad9`      | `20.20.0.218`   | [Acessar Site](https://20.20.0.218/) | [Acessar Admin](https://20.20.0.218/wp-login.php) |
+
+---
 ## 3. Passo a Passo do Provisionamento
 
 ### Fase A: Criação do Molde (Template)
@@ -58,7 +58,7 @@ Para evitar o erro de redirecionamento infinito (Redirect Loop) e habilitar o lo
 
 PHP
 
-```
+```php
 // Forçar HTTPS e IP Dinâmico para Clones
 $_SERVER['HTTPS'] = 'on';
 define( 'FORCE_SSL_ADMIN', true );
@@ -94,6 +94,6 @@ define( 'FS_METHOD', 'direct' );
 
 ---
 
-**Documento atualizado em:** 08/05/2026
+**Documento atualizado em:** 09/06/2025
 
 **Responsável:** Professor Olegário Neto & Equipe de Infraestrutura
