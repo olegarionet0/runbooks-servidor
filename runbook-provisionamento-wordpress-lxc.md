@@ -16,7 +16,7 @@
 
 - **Login Admin WordPress (Modelo):** `admin2`
 
-- **Senha Admin WordPress (Modelo):** `lab123`
+- **Senha Admin WordPress (Modelo):** `<SENHA_PADRAO_DO_LABORATORIO>`
     
 
 ## 2. Inventário de IPs (Planejamento)
